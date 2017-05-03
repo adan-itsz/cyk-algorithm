@@ -71,7 +71,7 @@ void imprimirGramatica(gramatica &g);
 		lista.push_back(crearProduccion(T,A1,A11));
 		lista.push_back(crearProduccion(T,A3,E));
 		lista.push_back(crearProduccion(T,x,0));
-		lista.push_back(crearProduccion(F,A10,A11));
+		lista.push_back(crearProduccion(F,A1,A11));
 		lista.push_back(crearProduccion(F,A3,E));
 		lista.push_back(crearProduccion(F,x,0));
 		
