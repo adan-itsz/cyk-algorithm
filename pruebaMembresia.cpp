@@ -13,7 +13,8 @@ typedef struct{
 	int latter;
 	}rule;
 	
-typedef enum{Q=81,E=69,T=84,F=70,A1=200,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14}generadores;
+
+typedef enum{Q=81,E=69,T=84,F=70,A1=200,A2,A3,A4,A5,A6,A7,A8,A9,A11,A12,A13,A14}generadores;
 typedef enum{q=113,e=101,s=115,p=112,l=108,r=114,n=110,x=120}terminales;
 	
 typedef vector<rule>gramatica;
@@ -43,37 +44,37 @@ void imprimirGramatica(gramatica &g);
 	
 	void crearGramatica(){
 		
-		lista.push_back(crearProduccion(A1, q ,0));
-		lista.push_back(crearProduccion(A2, e, 0));
+		lista.push_back(crearProduccion(A1, l ,0));
+		lista.push_back(crearProduccion(A2, q, 0));
 		lista.push_back(crearProduccion(A3, n, 0));
 		lista.push_back(crearProduccion(A4, r, 0));
-		lista.push_back(crearProduccion(A5, l, 0));
-		lista.push_back(crearProduccion(A6, p, 0));
-		lista.push_back(crearProduccion(A7, s, 0));
-		lista.push_back(crearProduccion(A8, x, 0));
-		lista.push_back(crearProduccion(A9,A1,Q));
-		lista.push_back(crearProduccion(A10,A2,Q));
-		lista.push_back(crearProduccion(A11,A9,A10));
-		lista.push_back(crearProduccion(Q,E,A11));
+		lista.push_back(crearProduccion(A5, p, 0));
+		lista.push_back(crearProduccion(A6, s, 0));
+		lista.push_back(crearProduccion(A7, A2, A8));
+		lista.push_back(crearProduccion(A8, Q, A9));
+		lista.push_back(crearProduccion(A9,E,Q));
+		lista.push_back(crearProduccion(Q,E,A7));
 		lista.push_back(crearProduccion(Q,A3,E));
-		lista.push_back(crearProduccion(A12,Q,A4));
-		lista.push_back(crearProduccion(Q,A5,A12));
-		lista.push_back(crearProduccion(Q,A8,0));
-		lista.push_back(crearProduccion(Q,A6,F));
-		lista.push_back(crearProduccion(Q,T,A13));
-		lista.push_back(crearProduccion(A14,A7,T));
-		lista.push_back(crearProduccion(Q,E,A14));
-		lista.push_back(crearProduccion(E,T,A13));
-		lista.push_back(crearProduccion(E,A8,0));
+		lista.push_back(crearProduccion(Q,A1,A11));
+		lista.push_back(crearProduccion(A11,Q,A4));
+		lista.push_back(crearProduccion(Q,x,0));
+		lista.push_back(crearProduccion(Q,T,A12));
+		lista.push_back(crearProduccion(A12,A5,F));
+		lista.push_back(crearProduccion(Q,E,A13));
+		lista.push_back(crearProduccion(A13,A6,T));
+		lista.push_back(crearProduccion(E,E,A13));
+		lista.push_back(crearProduccion(E,A1,A11));
 		lista.push_back(crearProduccion(E,A3,E));
-		lista.push_back(crearProduccion(E,Q,A4));
-		lista.push_back(crearProduccion(T,A8,0));
+		lista.push_back(crearProduccion(E,x,0));
+		lista.push_back(crearProduccion(E,T,A12));
+		lista.push_back(crearProduccion(T,T,A12));
+		lista.push_back(crearProduccion(T,A1,A11));
 		lista.push_back(crearProduccion(T,A3,E));
-		lista.push_back(crearProduccion(T,A5,A12));
-		lista.push_back(crearProduccion(F,A8,0));
+		lista.push_back(crearProduccion(T,x,0));
+		lista.push_back(crearProduccion(F,A10,A11));
 		lista.push_back(crearProduccion(F,A3,E));
-		lista.push_back(crearProduccion(F,A5,A12));
-		lista.push_back(crearProduccion(T,T,A13));
+		lista.push_back(crearProduccion(F,x,0));
+		
 		
 		}
 		
